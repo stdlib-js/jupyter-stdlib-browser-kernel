@@ -24,7 +24,14 @@
 
 var fs = require( 'fs' );
 var path = require( 'path' );
-var rimraf = require( 'rimraf' );
+
+
+// VARIABLES //
+
+var ROOT = path.resolve( __dirname, '..' );
+var BUILD = path.join( ROOT, 'build' );
+var BUNDLE = path.join( ROOT, 'node_modules', '@stdlib', 'stdlib', 'dist', 'stdlib-repl.min.js' );
+var DEST = path.join( BUILD, 'bundle.min.js' );
 
 
 // MAIN //
@@ -35,25 +42,11 @@ var rimraf = require( 'rimraf' );
 * @private
 */
 function main() {
-	var dir;
+	// Create a directory for storing the stdlib browser REPL:
+	fs.mkdirSync( BUILD );
 
-	// Resolve the `@stdlib` scoped node_modules directory:
-	dir = path.resolve( __dirname, '..', '@stdlib' );
-
-	// Remove the installed node_modules:
-	rimraf( dir, done );
-
-	/**
-	* Callback invoked upon removing a directory.
-	*
-	* @private
-	* @param {Error} [error] - error object
-	*/
-	function done( error ) {
-		if ( error ) {
-			console.error( 'Error: %s', error.message );
-		}
-	}
+	// Move the REPL bundle:
+	fs.renameSync( BUNDLE, DEST );
 }
 
 main();
