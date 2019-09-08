@@ -36,6 +36,8 @@ Installing and running the kernel **requires** the following prerequisites:
 
 [Node.js][node-js] and [npm][npm] are only needed during the installation sequence.
 
+* * *
+
 ## Installation
 
 To install the Jupyter kernel, navigate to the user directory for installing Jupyter kernels
@@ -68,6 +70,8 @@ and run the install sequence
 $ npm install
 ```
 
+* * *
+
 ## Usage
 
 Navigate to the directory from which you want to load, save, and/or edit notebooks
@@ -83,6 +87,8 @@ $ jupyter notebook
 ```
 
 Once opened, select the `JavaScript (in-browser)` notebook kernel.
+
+* * *
 
 ## Development
 
