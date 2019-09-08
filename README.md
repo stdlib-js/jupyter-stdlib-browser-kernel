@@ -42,7 +42,7 @@ Installing and running the kernel **requires** the following prerequisites:
 -   [npm][npm]: package manager
 -   [Jupyter][jupyter]: notebook environment and runtime
 
-[Node.js][node.js] and [npm][npm] are only needed during the installation sequence.
+[Node.js][node-js] and [npm][npm] are only needed during the installation sequence.
 
 ## Installation
 
