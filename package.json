@@ -1,0 +1,53 @@
+{
+  "name": "jupyter-stdlib-browser-kernel",
+  "version": "0.0.0",
+  "description": "Run an in-browser JavaScript Jupyter kernel.",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "The Stdlib Authors",
+    "url": "https://github.com/stdlib-js/jupyter-stdlib-browser-kernel/graphs/contributors"
+  },
+  "contributors": [
+    {
+      "name": "The Stdlib Authors",
+      "url": "https://github.com/stdlib-js/jupyter-stdlib-browser-kernel/graphs/contributors"
+    }
+  ],
+  "main": "",
+  "directories": {},
+  "scripts": {},
+  "homepage": "https://github.com/stdlib-js/jupyter-stdlib-browser-kernel",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/jupyter-stdlib-browser-kernel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/jupyter-stdlib-browser-kernel/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">2.7.0"
+  },
+  "os": [
+    "aix",
+    "darwin",
+    "freebsd",
+    "linux",
+    "macos",
+    "openbsd",
+    "sunos",
+    "win32",
+    "windows"
+  ],
+  "keywords": [
+    "stdlib",
+    "jupyter",
+    "javascript",
+    "js",
+    "kernel",
+    "browser"
+  ],
+  "__stdlib__": {}
+}
