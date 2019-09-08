@@ -24,7 +24,9 @@
   "bugs": {
     "url": "https://github.com/stdlib-js/jupyter-stdlib-browser-kernel/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "rimraf": "^3.0.0"
+  },
   "devDependencies": {},
   "engines": {
     "node": ">=0.10.0",
