@@ -104,9 +104,25 @@ To install as a Jupyter kernel, run
 $ jupyter kernelspec install ./jupyter-stdlib-browser-kernel --user
 ```
 
-from the parent directory of the cloned repository.
+from the parent directory of the cloned repository. The previous command should be run anytime changes are made to local repository files.
 
-The previous command should be run anytime changes are made to local repository files.
+Navigate to the repository directory,
+
+```bash
+$ cd ./jupyter-stdlib-browser-kernel
+```
+
+To run development notebooks, navigate to the `notebooks` directory
+
+```bash
+$ cd ./notebooks
+```
+
+and launch Jupyter notebook
+
+```bash
+$ jupyter notebook
+```
 
 * * *
 
