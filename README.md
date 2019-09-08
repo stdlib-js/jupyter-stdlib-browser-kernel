@@ -107,7 +107,7 @@ $ git clone https://github.com/stdlib-js/jupyter-stdlib-browser-kernel.git
 Navigate to the newly created directory
 
 ```bash
-$ cd ./jupyter-stdlib-browser-kernel
+$ cd jupyter-stdlib-browser-kernel
 ```
 
 and install kernel dependencies
@@ -127,7 +127,7 @@ The previous command should be run anytime changes are made to local repository 
 To run development notebooks, navigate to the `notebooks` directory
 
 ```bash
-$ cd ./notebooks
+$ cd notebooks
 ```
 
 and launch Jupyter notebook
