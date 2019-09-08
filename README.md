@@ -53,7 +53,7 @@ $ $(jupyter --data-dir)/kernels
 and then navigate to the created directory. Once in the `kernels` directory, clone this repository
 
 ```bash
-$ git clone https://github.com/stdlib-js/jupyter-stdlib-browser-kernel
+$ git clone https://github.com/stdlib-js/jupyter-stdlib-browser-kernel.git
 ```
 
 Navigate to the newly created directory
@@ -83,6 +83,28 @@ $ jupyter notebook
 ```
 
 Once opened, select the `JavaScript (in-browser)` notebook kernel.
+
+## Development
+
+To acquire the source code, first navigate to the parent directory into which you want to clone the git repository
+
+```bash
+$ cd /path/to/parent/destination/directory
+```
+
+Next, clone the repository
+
+```bash
+$ git clone https://github.com/stdlib-js/jupyter-stdlib-browser-kernel.git
+```
+
+To install as a Jupyter kernel, from the parent directory of the cloned repository, run
+
+```bash
+$ jupyter kernelspec install ./jupyter-stdlib-browser-kernel --user
+```
+
+The previous command should be run anytime changes are made to local repository files.
 
 * * *
 
