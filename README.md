@@ -26,14 +26,6 @@ limitations under the License.
 
 <section class="intro">
 
-</section>
-
-<!-- /.intro -->
-
-<!-- Installation documentation -->
-
-<section class="installation">
-
 ## Prerequisites
 
 Installing and running the kernel **requires** the following prerequisites:
@@ -76,12 +68,6 @@ and run the install sequence
 $ npm install
 ```
 
-</section>
-
-<!-- Usage documentation. -->
-
-<section class="usage">
-
 ## Usage
 
 Navigate to the directory from which you want to load, save, and/or edit notebooks
@@ -98,37 +84,25 @@ $ jupyter notebook
 
 Once opened, select the `JavaScript (in-browser)` notebook kernel.
 
-</section>
+* * *
 
-<!-- /.usage -->
+## License
 
-<!-- Usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+See [LICENSE][license].
 
-<section class="notes">
+## Copyright
 
-</section>
-
-<!-- /.notes -->
-
-<!-- Usage examples. -->
-
-<section class="examples">
+Copyright © 2019. The Stdlib Authors.
 
 </section>
 
-<!-- /.examples -->
-
-<!-- Section to include cited references. If references are included, add a horizontal rule *before* the section. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
-
-<section class="references">
-
-</section>
-
-<!-- /.references -->
+<!-- /.intro -->
 
 <!-- Section for all links. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
 
 <section class="links">
+
+[license]: https://raw.githubusercontent.com/stdlib-js/jupyter-stdlib-browser-kernel/master/LICENSE
 
 [node-js]: https://nodejs.org/en/
 
