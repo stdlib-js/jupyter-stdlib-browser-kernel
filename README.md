@@ -38,7 +38,7 @@ limitations under the License.
 
 Installing and running the kernel **requires** the following prerequisites:
 
--   [Node.js][node.js]: JavaScript runtime (preferably the latest LTS version)
+-   [Node.js][node-js]: JavaScript runtime (preferably the latest LTS version)
 -   [npm][npm]: package manager
 -   [Jupyter][jupyter]: notebook environment and runtime
 
