@@ -49,7 +49,7 @@ $ cd $(jupyter --data-dir)/kernels
 If the directory does not already exist, create the `kernels` folder
 
 ```bash
-$ $(jupyter --data-dir)/kernels
+$ mkdir $(jupyter --data-dir)/kernels
 ```
 
 and then navigate to the created directory. Once in the `kernels` directory, clone this repository
@@ -104,7 +104,7 @@ Next, clone the repository
 $ git clone https://github.com/stdlib-js/jupyter-stdlib-browser-kernel.git
 ```
 
-Navigate to the repository
+Navigate to the newly created directory
 
 ```bash
 $ cd ./jupyter-stdlib-browser-kernel
