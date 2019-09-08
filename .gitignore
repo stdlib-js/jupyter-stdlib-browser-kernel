@@ -99,7 +99,7 @@ pids
 *.seed
 
 # Ignore the top-level node_modules directory, except for lifecycle hooks:
-/node_modules/
+/node_modules/*
 !/node_modules/.hooks/
 
 # Typescript #
