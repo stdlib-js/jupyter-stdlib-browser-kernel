@@ -98,11 +98,13 @@ Next, clone the repository
 $ git clone https://github.com/stdlib-js/jupyter-stdlib-browser-kernel.git
 ```
 
-To install as a Jupyter kernel, from the parent directory of the cloned repository, run
+To install as a Jupyter kernel, run
 
 ```bash
 $ jupyter kernelspec install ./jupyter-stdlib-browser-kernel --user
 ```
+
+from the parent directory of the cloned repository.
 
 The previous command should be run anytime changes are made to local repository files.
 
