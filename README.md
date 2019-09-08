@@ -104,19 +104,25 @@ Next, clone the repository
 $ git clone https://github.com/stdlib-js/jupyter-stdlib-browser-kernel.git
 ```
 
-To install as a Jupyter kernel, run
-
-```bash
-$ jupyter kernelspec install ./jupyter-stdlib-browser-kernel --user
-```
-
-from the parent directory of the cloned repository. The previous command should be run anytime changes are made to local repository files.
-
-Navigate to the repository directory,
+Navigate to the repository
 
 ```bash
 $ cd ./jupyter-stdlib-browser-kernel
 ```
+
+and install kernel dependencies
+
+```bash
+$ npm install
+```
+
+To install as a Jupyter kernel, run
+
+```bash
+$ jupyter kernelspec install ./../jupyter-stdlib-browser-kernel --user
+```
+
+The previous command should be run anytime changes are made to local repository files.
 
 To run development notebooks, navigate to the `notebooks` directory
 
