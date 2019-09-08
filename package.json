@@ -15,7 +15,9 @@
   ],
   "main": "",
   "directories": {},
-  "scripts": {},
+  "scripts": {
+    "postinstall": "node ./scripts/postinstall && npm uninstall @stdlib/stdlib"
+  },
   "homepage": "https://github.com/stdlib-js/jupyter-stdlib-browser-kernel",
   "repository": {
     "type": "git",
@@ -25,7 +27,7 @@
     "url": "https://github.com/stdlib-js/jupyter-stdlib-browser-kernel/issues"
   },
   "dependencies": {
-    "rimraf": "^3.0.0"
+    "@stdlib/stdlib": "0.0.84"
   },
   "devDependencies": {},
   "engines": {
