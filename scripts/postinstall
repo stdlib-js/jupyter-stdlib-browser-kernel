@@ -43,8 +43,13 @@ var DEST = path.join( BUILD, 'bundle.min.js' );
 */
 function main() {
 	// Create a directory for storing the stdlib browser REPL:
-	fs.mkdirSync( BUILD );
-
+	if ( !fs.existsSync( BUILD ) ) {
+		fs.mkdirSync( BUILD );
+	}
+	// Remove an existing bundle:
+	if ( fs.existsSync( DEST ) ) {
+		fs.unlinkSync( DEST );
+	}
 	// Move the REPL bundle:
 	fs.renameSync( BUNDLE, DEST );
 }
