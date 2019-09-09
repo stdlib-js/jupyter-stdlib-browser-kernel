@@ -20,17 +20,24 @@
 
 (function main() {
 	var VERSION;
+	var NAME;
 	var deps;
 	var evil;
 
 	// Alias `eval` (Why? So that code executes in the global scope; see <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval>.):
 	evil = eval;
 
+	// Define the implementation name:
+	NAME = 'jupyter-stdlib-browser-kernel';
+
 	// Define the implementation version:
 	VERSION = '0.0.0';
 
 	// Define module dependencies:
-	deps = [ 'base/js/namespace' ];
+	deps = [
+		'base/js/namespace',
+		'/kernelspecs/'+NAME+'/build/bundle.min.js'
+	];
 
 	// Register the factory function:
 	define( deps, factory );
@@ -40,9 +47,10 @@
 	*
 	* @private
 	* @param {Object} jupyter - Jupyter notebook instance
+	* @param {Object} stdlib - stdlib
 	* @returns {Object} an object containing a callback to be invoked upon loading a kernel
 	*/
-	function factory( jupyter ) {
+	function factory( jupyter, stdlib ) {
 		var counter;
 		var kernel;
 
@@ -64,9 +72,21 @@
 		*/
 		function onload() {
 			var keys;
+			var ctx;
 			var ch;
+			var k;
 			var i;
 
+			// Extend the `window` context with REPL contents:
+			ctx = {};
+			stdlib.repl( ctx );
+			keys = Object.keys( ctx );
+			for ( i = 0; i < keys.length; i++ ) {
+				k = keys[ i ];
+				if ( !window.hasOwnProperty( k ) ) {
+					window[ k ] = ctx[ k ];
+				}
+			}
 			// Monkey-patch various kernel methods...
 			kernel.is_connected = isConnected;
 			kernel.is_fully_disconnected = isFullyDisconnected;
@@ -259,7 +279,7 @@
 			// Generate a kernel message:
 			reply = kernel._get_msg( 'kernel_info_reply', {
 				'protocol_version': '5.0.0',
-				'implementation': 'stdlib-browser-kernel',
+				'implementation': NAME,
 				'implementation_version': VERSION,
 				'language_info': {
 					'name': 'javascript',
