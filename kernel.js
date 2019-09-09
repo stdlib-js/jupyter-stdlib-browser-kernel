@@ -95,14 +95,12 @@
 			kernel.execute = execute;
 			kernel.kernel_info = kernelInfo;
 
-			// Stop the WebSocket and signal that we are connected...
+			// Close the WebSocket...
 			if ( kernel.ws ) {
 				kernel.ws.onclose = noop;
 				kernel.ws.onerror = noop;
 			}
 			kernel.start_channels = startChannels;
-
-			// Close the WebSocket:
 			kernel.stop_channels();
 
 			// Invoke the monkey-patched method to indicate that we're now connected:
