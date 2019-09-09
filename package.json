@@ -27,7 +27,7 @@
     "url": "https://github.com/stdlib-js/jupyter-stdlib-browser-kernel/issues"
   },
   "dependencies": {
-    "@stdlib/stdlib": "0.0.84"
+    "@stdlib/stdlib": "0.0.85"
   },
   "devDependencies": {},
   "engines": {
