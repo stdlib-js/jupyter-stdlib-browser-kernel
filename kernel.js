@@ -21,6 +21,10 @@
 (function main() {
 	var VERSION;
 	var deps;
+	var evil;
+
+	// Alias `eval` (Why? So that code executes in the global scope; see <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval>.):
+	evil = eval;
 
 	// Define the implementation version:
 	VERSION = '0.0.0';
@@ -71,12 +75,10 @@
 			kernel.execute = execute;
 			kernel.kernel_info = kernelInfo;
 
-			// Stop WebSockets and signal that we are connected...
-			keys = Object.keys( kernel.channels );
-			for ( i = 0; i < keys.length; i++ ) {
-				ch = kernel.channels[ keys[ i ] ];
-				ch.onclose = noop;
-				ch.onerror = noop;
+			// Stop the WebSocket and signal that we are connected...
+			if ( kernel.ws ) {
+				kernel.ws.onclose = noop;
+				kernel.ws.onerror = noop;
 			}
 			kernel.start_channels = startChannels;
 
@@ -151,7 +153,8 @@
 
 			// Attempt to evaluate the code:
 			try {
-				r = eval( code ); // FIXME: assumes synchronous code!!!
+				r = evil( code ); // FIXME: assumes synchronous code!!!
+				success = true;
 			} catch ( err ) {
 				r = err;
 				success = false;
@@ -165,7 +168,7 @@
 					res = kernel._get_msg( 'execute_result', {
 						'execution_count': counter,
 						'data': {
-							'text/plain': r.toString()
+							'text/plain': String( r )
 						},
 						'metadata': {}
 					});
@@ -173,9 +176,9 @@
 					// Generate a kernel message:
 					res = kernel._get_msg( 'error', {
 						'execution_count': counter,
-						'ename': r.name,
-						'evalue': r.message,
-						'traceback': [ r.stack ]
+						'ename': r.name || 'Error',
+						'evalue': r.message || '',
+						'traceback': [ r.stack || '' ]
 					});
 				}
 				res.parent_header = req.header;
@@ -202,7 +205,7 @@
 			// Dispatch a shell message to the respective handler:
 			kernel._handle_shell_reply( reply );
 
-			// Update the execution counter
+			// Update the execution counter:
 			counter += 1;
 
 			/**
